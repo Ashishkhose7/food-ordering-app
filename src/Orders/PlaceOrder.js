@@ -218,7 +218,7 @@ class PlaceOrder extends Component {
           totalPrice = totalPrice + parseFloat(item.menu_price);
           return "ok";
         });
-        this.setState({ menuItem: data, cost: totalPrice });
+        this.setState({ menuItem: data, cost: totalPrice + (totalPrice > 200 ? 0 : 50) });
       });
   }
 }
