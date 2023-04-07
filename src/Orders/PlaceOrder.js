@@ -17,9 +17,10 @@ class PlaceOrder extends Component {
       name: userData ? userData.name : "",
       email: userData ? userData.email : "",
       cost: 0,
+      excost: 0,
       phone: userData ? userData.phone : "",
       address: "77 K Delhi",
-      menuItem: ""
+      menuItem: "",
     };
   }
 
@@ -36,7 +37,7 @@ class PlaceOrder extends Component {
       resolveAfter3Sec,
       {
         pending: "Wait.. Order is Getting Placed",
-        success: "Order is Placed Successfully"
+        success: "Order is Placed Successfully",
       },
       { autoClose: 2000 }
     );
@@ -47,9 +48,9 @@ class PlaceOrder extends Component {
         method: "POST",
         headers: {
           accept: "application/json",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(obj)
+        body: JSON.stringify(obj),
       })
         // .then(console.log("order added"));
         .then(this.props.history.push("/viewBooking"));
@@ -168,20 +169,16 @@ class PlaceOrder extends Component {
                     <hr />
                     <div className="total-price">
                       <span className="text-secondary d-block">
-                        Subtotal: Rs {this.state.cost}
+                        Subtotal: Rs {this.state.excost}
                       </span>
                       <span className="text-secondary">
                         Delivery charges:{" "}
-                        {this.state.cost > 200 ? "Free" : "Rs 50"}
+                        {this.state.excost > 200 ? "Free" : "Rs 50"}
                       </span>
                       <hr />
                       <h6>
                         <span className="">Total Price:</span>
-                        <span className="fw-bold ">
-                          {" "}
-                          Rs{" "}
-                          {this.state.cost + (this.state.cost > 200 ? 0 : 50)}
-                        </span>
+                        <span className="fw-bold "> Rs {this.state.cost}</span>
                       </h6>
                       <button
                         className="btn btn-outline-success mt-4 btn-paceorder"
@@ -207,9 +204,9 @@ class PlaceOrder extends Component {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(menuId)
+      body: JSON.stringify(menuId),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -218,7 +215,11 @@ class PlaceOrder extends Component {
           totalPrice = totalPrice + parseFloat(item.menu_price);
           return "ok";
         });
-        this.setState({ menuItem: data, cost: totalPrice + (totalPrice > 200 ? 0 : 50) });
+        this.setState({
+          excost: totalPrice,
+          menuItem: data,
+          cost: totalPrice + (totalPrice > 200 ? 0 : 50),
+        });
       });
   }
 }
