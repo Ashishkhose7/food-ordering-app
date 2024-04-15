@@ -23,7 +23,7 @@ class ListingPage extends Component {
     return (
       <>
         <Header />
-        <h3 className="title">
+        <h3 className="container title">
           Places near you for {this.props.match.params.mealType}
         </h3>
         <button
