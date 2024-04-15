@@ -16,7 +16,7 @@ body {
   }
 }
 .title {
-  margin: 20px 120px;
+  margin: 20px auto;
   font-weight: 600;
   color: #192f60;
   letter-spacing: 1px;
