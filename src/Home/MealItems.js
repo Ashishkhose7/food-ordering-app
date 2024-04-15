@@ -22,7 +22,7 @@ const MealItems = ({ mealData }) => {
         <img
           src="https://www.epidomastegasis.gr/gov/Content/images/loaders/loader4.gif"
           alt="loading"
-          className="loader"
+          className="loader text-center d-flex justify-content-center"
         />
       </>
     );
