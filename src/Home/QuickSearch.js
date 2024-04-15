@@ -14,7 +14,7 @@ class QuickSearch extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="card-container d-flex justify-content-center">
           <SectionHeadings title={"Discover Restaurants by Meal"} />
           <MealItemCards mealData={this.state.mealData} />
