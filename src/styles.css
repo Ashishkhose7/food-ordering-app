@@ -289,4 +289,5 @@ nav {
 .loader {
   height: 35px;
   width: 35px;
+  margin: auto;
 }
