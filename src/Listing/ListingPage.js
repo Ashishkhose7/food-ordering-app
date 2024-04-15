@@ -35,7 +35,7 @@ class ListingPage extends Component {
             Filters
           </a>
         </button>
-        <section className="filter-content conatiner">
+        <section className="conatiner filter-content">
           <Filter
             mealid={this.props.location.search.split("=")[1]}
             restPerCuisine={(data) => {
