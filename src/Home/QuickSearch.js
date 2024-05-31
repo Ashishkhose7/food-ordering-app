@@ -18,7 +18,7 @@ class QuickSearch extends Component {
         <div className="card-container d-flex">
           <SectionHeadings title={"Discover Restaurants by Meal"} />
           <MealItemCards mealData={this.state.mealData} />
-          <SectionHeadings title={"Order Your Favourite Food Here"} />
+          <SectionHeadings title={"Order Your Favourite Food Here"} isfav={true}/>
           <FoodCards favfoodData={this.state.favfoodData} />
         </div>
       </div>
