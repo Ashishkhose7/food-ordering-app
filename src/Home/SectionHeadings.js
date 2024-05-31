@@ -1,6 +1,6 @@
-const SectionHeadings = ({ title }) => {
+const SectionHeadings = ({ title, isfav }) => {
   return (
-    <section className="quick-search-section-heading mx-2" id="dashboard">
+    <section className={{quick-search-section-heading:true mx-5:isfav }} id="dashboard">
       <h4 className="title-one-head">
         <span className="">{title}</span>
       </h4>
