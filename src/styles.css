@@ -140,8 +140,8 @@ nav {
 }
 
 .card-container {
-  margin: 0px 45px;
-  justify-content: space-between;
+  margin: 0px 0px;
+  justify-content: space-around;
   flex-wrap: wrap;
   font-family: "Poppins", sans-serif;
 }
